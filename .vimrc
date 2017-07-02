@@ -36,7 +36,7 @@ set splitright
 let mapleader="m"
 
 """""""""""""""""""""""""""""""""""""""
-" mappings 
+" Mappings 
 "
 nnoremap <leader><space> :nohlsearch<cr>
 nnoremap j gj
@@ -73,3 +73,9 @@ highlight PreProc    ctermfg=none
 highlight Type       ctermfg=none
 highlight Special    ctermfg=none
 highlight Underlined ctermfg=none
+
+""""""""""""""""""""""""""""""""""""""
+" Code Style
+" 
+filetype plugin indent on
+
