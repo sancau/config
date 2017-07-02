@@ -43,6 +43,10 @@ nnoremap j gj
 nnoremap k gk
 nnoremap <space> /
 
+nnoremap <leader>q :q<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>wq :wq<CR>
+
 command Q q
 command Wq wq
 
