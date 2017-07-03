@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'https://github.com/jiangmiao/auto-pairs.git'
 
 call plug#end() 
 
@@ -17,6 +18,7 @@ syntax off
 " General
 " 
 set encoding=utf-8
+set noswapfile
 set clipboard=unnamed
 set tabstop=4
 set softtabstop=4
@@ -32,6 +34,7 @@ set wildignore=*.pyc,*/.git/*,*/.DS_Store
 set ruler
 set splitbelow
 set splitright
+set colorcolumn=80
 
 let mapleader="m"
 
@@ -64,15 +67,15 @@ nnoremap <leader>c :Commits<CR>
 "
 set t_Co=256
 syntax on
-highlight Comment    cterm=bold ctermfg=none
-highlight Error      ctermfg=yellow
-highlight Constant   ctermfg=none
-highlight Identifier ctermfg=none
-highlight Statement  ctermfg=none
-highlight PreProc    ctermfg=none
-highlight Type       ctermfg=none
-highlight Special    ctermfg=none
-highlight Underlined ctermfg=none
+"highlight Comment    cterm=bold ctermfg=none
+"highlight Error      ctermfg=yellow
+"highlight Constant   ctermfg=none
+"highlight Identifier ctermfg=none
+"highlight Statement  ctermfg=none
+"highlight PreProc    ctermfg=none
+"highlight Type       ctermfg=none
+"highlight Special    ctermfg=none
+"highlight Underlined ctermfg=none
 
 """"""""""""""""""""""""""""""""""""""
 " Code Style
