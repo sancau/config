@@ -8,8 +8,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
+Plug 'https://github.com/scrooloose/nerdtree.git'
+Plug 'junegunn/goyo.vim'
+Plug 'https://github.com/joshdick/onedark.vim.git'
 
-call plug#end() 
+call plug#end()
 
 filetype indent off
 syntax off
@@ -34,7 +37,7 @@ set wildignore=*.pyc,*/.git/*,*/.DS_Store
 set ruler
 set splitbelow
 set splitright
-set colorcolumn=80
+set colorcolumn=81
 
 let mapleader="m"
 
@@ -62,11 +65,18 @@ nnoremap <leader>f :Files .<CR>
 nnoremap <leader>s :Ag<CR>
 nnoremap <leader>c :Commits<CR>
 
+map <C-n> :NERDTreeToggle<CR>
+map <leader>z :Goyo <bar> highlight StatusLineNC ctermfg=white<CR>
+
 """"""""""""""""""""""""""""""""""""""
 " Syntax Colors
 "
 set t_Co=256
 syntax on
+colorscheme onedark
+
+" No colors setup (except comments and errors)
+" 
 "highlight Comment    cterm=bold ctermfg=none
 "highlight Error      ctermfg=yellow
 "highlight Constant   ctermfg=none
@@ -81,4 +91,5 @@ syntax on
 " Code Style
 " 
 filetype plugin indent on
+
 
