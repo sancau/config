@@ -7,10 +7,12 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'https://github.com/jiangmiao/auto-pairs.git'
-Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'junegunn/goyo.vim'
-Plug 'https://github.com/joshdick/onedark.vim.git'
+
+Plug 'https://github.com/jiangmiao/auto-pairs.git'
+Plug 'https://github.com/Vimjas/vim-python-pep8-indent'
+Plug 'https://github.com/scrooloose/nerdtree.git'
+Plug 'https://github.com/lifepillar/vim-solarized8.git'
 
 call plug#end()
 
@@ -68,12 +70,17 @@ nnoremap <leader>c :Commits<CR>
 map <C-n> :NERDTreeToggle<CR>
 map <leader>z :Goyo <bar> highlight StatusLineNC ctermfg=white<CR>
 
+nnoremap  <leader>B :<c-u>exe "colors" (g:colors_name =~# "dark"
+    \ ? substitute(g:colors_name, 'dark', 'light', '')
+    \ : substitute(g:colors_name, 'light', 'dark', '')
+    \ )<cr>
+
 """"""""""""""""""""""""""""""""""""""
 " Syntax Colors
 "
 set t_Co=256
 syntax on
-colorscheme onedark
+colorscheme solarized8_light
 
 " No colors setup (except comments and errors)
 " 
@@ -90,6 +97,6 @@ colorscheme onedark
 """"""""""""""""""""""""""""""""""""""
 " Code Style
 " 
+filetype plugin on
 filetype plugin indent on
-
 
