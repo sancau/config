@@ -1,5 +1,4 @@
 " github.com/sancau .vimrc
-
 """""""""""""""""""""""""""""""""""""""
 " Plugins 
 "
@@ -13,6 +12,7 @@ Plug 'https://github.com/jiangmiao/auto-pairs.git'
 Plug 'https://github.com/Vimjas/vim-python-pep8-indent'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/lifepillar/vim-solarized8.git'
+Plug 'https://github.com/davidhalter/jedi-vim.git'
 
 call plug#end()
 
@@ -46,10 +46,9 @@ let mapleader="m"
 """""""""""""""""""""""""""""""""""""""
 " Mappings 
 "
-nnoremap <leader><space> :nohlsearch<cr>
+nnoremap <leader>/ :nohlsearch<cr>
 nnoremap j gj
 nnoremap k gk
-nnoremap <space> /
 
 nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
@@ -66,6 +65,12 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <leader>f :Files .<CR>
 nnoremap <leader>s :Ag<CR>
 nnoremap <leader>c :Commits<CR>
+
+nnoremap <leader>gs :! git status<CR>
+nnoremap <leader>gd :! git diff<CR>
+nnoremap <leader>bj :! eval $(docker-machine env dev) && python run.py compose --js<CR>
+
+nnoremap <leader>db o<ESC>simport pudb; pu.db<ESC>^
 
 map <C-n> :NERDTreeToggle<CR>
 map <leader>z :Goyo <bar> highlight StatusLineNC ctermfg=white<CR>
