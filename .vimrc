@@ -12,7 +12,7 @@ Plug 'https://github.com/jiangmiao/auto-pairs.git'
 Plug 'https://github.com/Vimjas/vim-python-pep8-indent'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/lifepillar/vim-solarized8.git'
-Plug 'https://github.com/davidhalter/jedi-vim.git'
+Plug 'https://github.com/Valloric/YouCompleteMe'
 
 call plug#end()
 
@@ -42,6 +42,7 @@ set splitright
 set colorcolumn=81
 
 let mapleader="m"
+let g:ycm_python_binary_path = 'python'
 
 """""""""""""""""""""""""""""""""""""""
 " Mappings 
@@ -70,7 +71,8 @@ nnoremap <leader>gs :! git status<CR>
 nnoremap <leader>gd :! git diff<CR>
 nnoremap <leader>bj :! eval $(docker-machine env dev) && python run.py compose --js<CR>
 
-nnoremap <leader>db o<ESC>simport pudb; pu.db<ESC>^
+nnoremap <leader>db oimport pudb; pu.db<ESC>^
+nnoremap <space> :YcmCompleter GoTo<CR> 
 
 map <C-n> :NERDTreeToggle<CR>
 map <leader>z :Goyo <bar> highlight StatusLineNC ctermfg=white<CR>
